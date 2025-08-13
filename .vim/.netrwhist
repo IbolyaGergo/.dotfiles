@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =4
+let g:netrw_dirhist_4='/home/gergoi/.ipython/profile_default/startup'
+let g:netrw_dirhist_3='/home/gergoi'
+let g:netrw_dirhist_2='/home/gergoi/.ipython/profile_default/security'
+let g:netrw_dirhist_1='/home/gergoi'
+let g:netrw_dirhist_0='/home/gergoi/.ipython/profile_default/pid'
+let g:netrw_dirhist_9='/home/gergoi'
+let g:netrw_dirhist_8='/home/gergoi/.ipython/profile_default/log'
+let g:netrw_dirhist_7='/home/gergoi'
+let g:netrw_dirhist_6='/home/gergoi/.ipython/profile_default/db'
+let g:netrw_dirhist_5='/home/gergoi/.ipython/profile_default'
