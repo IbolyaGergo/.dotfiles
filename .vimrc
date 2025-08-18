@@ -104,6 +104,19 @@ set omnifunc=syntaxcomplete#Complete
 " Set tree as default listing style for netrw
 let g:netrw_liststyle= 3
 
+
+" cursor shape depending on mode
+" Note: This should be set after `set termguicolors` or `set t_Co=256`.
+if &term =~ 'xterm' || &term == 'win32'
+" Use DECSCUSR escape sequences
+let &t_SI = "\e[5 q"    " blink bar
+let &t_SR = "\e[3 q"    " blink underline
+let &t_EI = "\e[1 q"    " blink block
+let &t_ti ..= "\e[1 q"  " blink block
+let &t_te ..= "\e[0 q"  " default (depends on terminal, normally blink
+			" block)
+endif
+
 " Plugins
 " automatic installation of vim-plug
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
