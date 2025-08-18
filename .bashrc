@@ -148,4 +148,10 @@ fi }
 export LIBGL_ALWAYS_INDIRECT=1
 
 # set up EDITOR
-export EDITOR='vim'
+export EDITOR="vim"
+
+# add texlive to PATH
+export PATH="/usr/local/texlive/2025/bin/x86_64-linux:$PATH"
+export MANPATH="/usr/local/texlive/2025/texmf-dist/doc/man:$MANPATH"
+export INFOPATH="/usr/local/texlive/2025/texmf-dist/doc/info:$INFOPATH"
+
