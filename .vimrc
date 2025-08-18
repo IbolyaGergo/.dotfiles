@@ -104,9 +104,18 @@ set omnifunc=syntaxcomplete#Complete
 " Set tree as default listing style for netrw
 let g:netrw_liststyle= 3
 
+" Plugins
 " automatic installation of vim-plug
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
   silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
+
+call plug#begin()
+
+" List your plugins here
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+
+call plug#end()
