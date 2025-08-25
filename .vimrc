@@ -90,6 +90,10 @@ set expandtab
 
 " Highlight searched words
 set hlsearch
+" Mute hlsearch shortcut
+nnoremap <silent> <C-l> :nohlsearch<CR><C-l>
+" In the book Practical Vim, there is a <C-u>, I dont know why.
+" nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 
 
 " File traverse from Tim Pope's unmpaired.vim plugin.
@@ -98,7 +102,12 @@ nnoremap <silent> ]b :bnext<CR>
 nnoremap <silent> [B :bfirst<CR>
 nnoremap <silent> ]B :blast<CR>
 
-filetype plugin on
+filetype on             " enable filetype detection
+filetype plugin on      " load file-specific plugins
+filetype indent on      " load file-specific indentation
+
+set encoding=utf-8
+
 set omnifunc=syntaxcomplete#Complete
 
 " Set tree as default listing style for netrw
@@ -117,7 +126,10 @@ let &t_te ..= "\e[0 q"  " default (depends on terminal, normally blink
 			" block)
 endif
 
+"===================================================================================
 " Plugins
+"===================================================================================
+"
 " automatic installation of vim-plug
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
@@ -130,5 +142,41 @@ call plug#begin()
 " List your plugins here
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+Plug 'lervag/vimtex'
 
 call plug#end()
+
+" UltiSnips
+
+let g:UltiSnipsExpandTrigger       = '<Tab>'    " use Tab to expand snippets
+let g:UltiSnipsJumpForwardTrigger  = '<Tab>'    " use Tab to move forward through tabstops
+let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'  " use Shift-Tab to move backward through tabstops
+
+" VimTex
+
+" This is necessary for VimTeX to load properly. The "indent" is optional.
+" Note: Most plugin managers will do this automatically!
+" filetype plugin indent on
+
+" This enables Vim's and neovim's syntax-related features. Without this, some
+" VimTeX features will not work (see ":help vimtex-requirements" for more
+" info).
+" Note: Most plugin managers will do this automatically!
+" syntax enable
+" Viewer options: One may configure the viewer either by specifying a built-in
+" viewer method:
+let g:vimtex_view_method = 'zathura'
+
+" Or with a generic interface:
+" let g:vimtex_view_general_viewer = 'okular'
+" let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
+" VimTeX uses latexmk as the default compiler backend. If you use it, which is
+" strongly recommended, you probably don't need to configure anything. If you
+" want another compiler backend, you can change it as follows. The list of
+" supported backends and further explanation is provided in the documentation,
+" see ":help vimtex-compiler".
+" let g:vimtex_compiler_method = 'latexrun'
+
+" Most VimTeX mappings rely on localleader and this can be changed with the
+" following line. The default is usually fine and is the symbol "\".
+" let maplocalleader = ","
