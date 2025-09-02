@@ -180,3 +180,10 @@ let g:vimtex_view_method = 'zathura'
 " Most VimTeX mappings rely on localleader and this can be changed with the
 " following line. The default is usually fine and is the symbol "\".
 " let maplocalleader = ","
+
+" Start server for reverse-search from PDF
+" This will only work if `vim --version` includes `+clientserver`!
+if empty(v:servername) && exists('*remote_startserver')
+  call remote_startserver('VIM')
+endif
+
