@@ -103,4 +103,6 @@ set omnifunc=syntaxcomplete#Complete
 
 " Set tree as default listing style for netrw
 let g:netrw_liststyle= 3
-" Comment
+
+" Need it for nice visual mode on my home laptop
+set background=dark
