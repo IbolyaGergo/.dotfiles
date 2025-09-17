@@ -126,6 +126,8 @@ let &t_te ..= "\e[0 q"  " default (depends on terminal, normally blink
 			" block)
 endif
 
+set background=dark
+
 "===================================================================================
 " Plugins
 "===================================================================================
@@ -186,4 +188,3 @@ let g:vimtex_view_method = 'zathura'
 if empty(v:servername) && exists('*remote_startserver')
   call remote_startserver('VIM')
 endif
-
