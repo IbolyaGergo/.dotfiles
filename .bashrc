@@ -161,3 +161,10 @@ export INFOPATH="/usr/local/texlive/2025/texmf-dist/doc/info:$INFOPATH"
 if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
   tmux attach-session -t default || tmux new-session -s default
 fi
+
+# Prompt shows current branch and status of cwd(from Pro Git)
+if [ -f ~/.git-prompt.sh ]; then
+    . ~/.git-prompt.sh
+    export GIT_PS1_SHOWDIRTYSTATE=1
+    export PS1='\w$(__git_ps1 " (%s)")\$ '
+fi
