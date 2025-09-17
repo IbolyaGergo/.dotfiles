@@ -168,3 +168,8 @@ if [ -f ~/.git-prompt.sh ]; then
     export GIT_PS1_SHOWDIRTYSTATE=1
     export PS1='\w$(__git_ps1 " (%s)")\$ '
 fi
+
+# Setup XILINX_VITIS and XILINX_VIVADO variables
+if [ -f  /home/gergoi/tools/Xilinx/Vitis/2022.1/settings64.sh ]; then
+    . /home/gergoi/tools/Xilinx/Vitis/2022.1/settings64.sh
+fi
