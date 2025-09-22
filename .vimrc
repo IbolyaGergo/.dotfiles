@@ -91,9 +91,11 @@ set expandtab
 " Highlight searched words
 set hlsearch
 " Mute hlsearch shortcut
-nnoremap <silent> <C-l> :nohlsearch<CR><C-l>
-" In the book Practical Vim, there is a <C-u>, I dont know why.
-" nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
+" nnoremap <silent> <C-l> :nohlsearch<CR><C-l>
+nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
+" In the book Practical Vim, there is a <C-u> after ':'.
+" Since <C-u> is after ':', it is in command mode, which on default deletes
+" everything between the cursor and the beginning of the line.
 
 
 " File traverse from Tim Pope's unmpaired.vim plugin.
