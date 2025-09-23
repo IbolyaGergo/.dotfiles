@@ -91,9 +91,11 @@ set expandtab
 " Highlight searched words
 set hlsearch
 " Mute hlsearch shortcut
-nnoremap <silent> <C-l> :nohlsearch<CR><C-l>
-" In the book Practical Vim, there is a <C-u>, I dont know why.
-" nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
+" nnoremap <silent> <C-l> :nohlsearch<CR><C-l>
+nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
+" In the book Practical Vim, there is a <C-u> after ':'.
+" Since <C-u> is after ':', it is in command mode, which on default deletes
+" everything between the cursor and the beginning of the line.
 
 
 " File traverse from Tim Pope's unmpaired.vim plugin.
@@ -128,6 +130,8 @@ let &t_te ..= "\e[0 q"  " default (depends on terminal, normally blink
 			" block)
 endif
 
+set background=dark
+
 "===================================================================================
 " Plugins
 "===================================================================================
@@ -153,6 +157,8 @@ call plug#end()
 let g:UltiSnipsExpandTrigger       = '<Tab>'    " use Tab to expand snippets
 let g:UltiSnipsJumpForwardTrigger  = '<Tab>'    " use Tab to move forward through tabstops
 let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'  " use Shift-Tab to move backward through tabstops
+let g:UltiSnipsSnippetDirectories = ["UltiSnips", "mysnippets"] " subdirs to look for snippets
+let g:UltiSnipsEdit = [$HOME.'.vim/mysnippets'] " edit only affects the mysnippets dir
 
 " VimTex
 
