@@ -170,3 +170,5 @@ fi
 if [ -f  /home/gergoi/tools/Xilinx/Vitis/2022.1/settings64.sh ]; then
     . /home/gergoi/tools/Xilinx/Vitis/2022.1/settings64.sh
 fi
+
+export CPPUTEST_HOME="$HOME/tools/cpputest"
