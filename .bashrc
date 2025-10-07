@@ -144,8 +144,6 @@ elif [ "$CONDACONFIGDIR" ]; then
     fi
 fi }
 
-export LIBGL_ALWAYS_INDIRECT=1
-
 # set up EDITOR
 export EDITOR="vim"
 
