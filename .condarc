@@ -4,3 +4,4 @@ channels:
 
 env_prompt: ({name})
 channel_priority: strict
+auto_activate: false
