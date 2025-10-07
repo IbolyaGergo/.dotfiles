@@ -130,6 +130,10 @@ endif
 
 set background=dark
 
+" Man page appears in a Vim window
+" To open a man page from C Library:
+" :Man 3 pthread_create
+runtime! ftplugin/man.vim
 "===================================================================================
 " Plugins
 "===================================================================================
