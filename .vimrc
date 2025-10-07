@@ -134,6 +134,11 @@ set background=dark
 " To open a man page from C Library:
 " :Man 3 pthread_create
 runtime! ftplugin/man.vim
+
+if filereadable("init.vim")
+    source init.vim
+endif
+
 "===================================================================================
 " Plugins
 "===================================================================================
