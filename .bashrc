@@ -132,12 +132,11 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 # Automatically activate conda env when cd in a dir.
-# There need to be a .conda_config inside that dir, containing only the env name.
 export CONDACONFIGDIR=""
 cd() { builtin cd "$@" &&
-if [ -f $PWD/.conda_config ]; then
+if [ -f $PWD/environment.yaml ]; then
     export CONDACONFIGDIR=$PWD
-    conda activate $(cat .conda_config)
+    conda activate $(grep name: $PWD/environment.yaml | head -n 1 | cut -d: -f2)
 elif [ "$CONDACONFIGDIR" ]; then
     if [[ $PWD != *"$CONDACONFIGDIR"* ]]; then
         export CONDACONFIGDIR=""
