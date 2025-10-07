@@ -3,3 +3,4 @@
 	name = IbolyaGergo
 [core]
 	editor = vim
+	excludesFile = ~/.gitignore_global
