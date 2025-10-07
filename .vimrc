@@ -115,6 +115,8 @@ set omnifunc=syntaxcomplete#Complete
 " Set tree as default listing style for netrw
 let g:netrw_liststyle= 3
 
+" Need it for nice visual mode on my home laptop
+set background=dark
 
 " cursor shape depending on mode
 " Note: This should be set after `set termguicolors` or `set t_Co=256`.
