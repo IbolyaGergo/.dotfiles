@@ -3,3 +3,6 @@
 	name = IbolyaGergo
 [core]
 	editor = vim
+	excludesFile = ~/.gitignore_global
+[diff]
+	tool = vimdiff

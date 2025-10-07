@@ -118,14 +118,14 @@ fi
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/gergoi/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+__conda_setup="$('/home/$USER/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/gergoi/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/gergoi/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "/home/$USER/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/$USER/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/gergoi/miniconda3/bin:$PATH"
+        export PATH="/home/$USER/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
@@ -172,3 +172,6 @@ if [ -f  /home/gergoi/tools/Xilinx/Vitis/2022.1/settings64.sh ]; then
 fi
 
 export CPPUTEST_HOME="$HOME/tools/cpputest"
+
+# Required for tldr
+export PATH="/home/$USER/.local/bin:$PATH"

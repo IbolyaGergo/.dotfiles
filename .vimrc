@@ -115,6 +115,8 @@ set omnifunc=syntaxcomplete#Complete
 " Set tree as default listing style for netrw
 let g:netrw_liststyle= 3
 
+" Need it for nice visual mode on my home laptop
+set background=dark
 
 " cursor shape depending on mode
 " Note: This should be set after `set termguicolors` or `set t_Co=256`.
@@ -129,6 +131,15 @@ let &t_te ..= "\e[0 q"  " default (depends on terminal, normally blink
 endif
 
 set background=dark
+
+" Man page appears in a Vim window
+" To open a man page from C Library:
+" :Man 3 pthread_create
+runtime! ftplugin/man.vim
+
+if filereadable("init.vim")
+    source init.vim
+endif
 
 "===================================================================================
 " Plugins
