@@ -158,8 +158,11 @@ call plug#begin()
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'lervag/vimtex'
+Plug 'lifepillar/vim-solarized8'
 
 call plug#end()
+
+color solarized8_high
 
 " UltiSnips
 
