@@ -11,8 +11,13 @@
 " `vim -u foo`).
 set nocompatible
 
+set background=light
 " Turn on syntax highlighting.
-syntax on
+syntax enable
+
+" Set Search highlight colors
+hi Search ctermbg=red
+hi Search ctermfg=white
 
 " Disable the default Vim startup message.
 set shortmess+=I
@@ -115,9 +120,6 @@ set omnifunc=syntaxcomplete#Complete
 " Set tree as default listing style for netrw
 let g:netrw_liststyle= 3
 
-" Need it for nice visual mode on my home laptop
-set background=dark
-
 " cursor shape depending on mode
 " Note: This should be set after `set termguicolors` or `set t_Co=256`.
 if &term =~ 'xterm' || &term == 'win32'
@@ -129,8 +131,6 @@ let &t_ti ..= "\e[1 q"  " blink block
 let &t_te ..= "\e[0 q"  " default (depends on terminal, normally blink
 			" block)
 endif
-
-set background=dark
 
 " Man page appears in a Vim window
 " To open a man page from C Library:
