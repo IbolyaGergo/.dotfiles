@@ -11,14 +11,6 @@
 " `vim -u foo`).
 set nocompatible
 
-set background=light
-" Turn on syntax highlighting.
-syntax enable
-
-" Set Search highlight colors
-hi Search ctermbg=red
-hi Search ctermfg=white
-
 " Disable the default Vim startup message.
 set shortmess+=I
 
@@ -159,10 +151,14 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'lervag/vimtex'
 Plug 'lifepillar/vim-solarized8'
+Plug 'morhetz/gruvbox'
 
 call plug#end()
 
-color solarized8_high
+" Color theme and syntax highlighting
+set background=dark
+syntax enable
+color gruvbox
 
 " UltiSnips
 
