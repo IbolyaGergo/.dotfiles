@@ -159,6 +159,8 @@ call plug#end()
 set background=dark
 syntax enable
 color gruvbox
+" Column indicating column number
+set colorcolumn=80
 
 " UltiSnips
 
