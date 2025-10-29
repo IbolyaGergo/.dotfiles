@@ -110,7 +110,13 @@ set encoding=utf-8
 set omnifunc=syntaxcomplete#Complete
 
 " Set tree as default listing style for netrw
-let g:netrw_liststyle= 3
+let g:netrw_liststyle=3
+" Suppress banner
+let g:netrw_banner=0
+
+if has('termguicolors')
+    set termguicolors
+endif
 
 " cursor shape depending on mode
 " Note: This should be set after `set termguicolors` or `set t_Co=256`.
@@ -132,6 +138,8 @@ runtime! ftplugin/man.vim
 if filereadable("init.vim")
     source init.vim
 endif
+
+set path+=**
 
 "===================================================================================
 " Plugins
@@ -156,11 +164,26 @@ Plug 'morhetz/gruvbox'
 call plug#end()
 
 " Color theme and syntax highlighting
-set background=dark
+" set background=light
+" syntax enable
+" color gruvbox
+" let g:gruvbox_contrast_light='soft'
+
+" Color theme and syntax highlighting
+set background=light
 syntax enable
-color gruvbox
+
 " Column indicating column number
 set colorcolumn=80
+
+color solarized8
+
+" Color theme and syntax highlighting
+" set background=dark
+" syntax enable
+" color gruvbox
+" let g:gruvbox_contrast_dark='soft'
+
 
 " UltiSnips
 
