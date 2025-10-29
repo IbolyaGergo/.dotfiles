@@ -110,7 +110,9 @@ set encoding=utf-8
 set omnifunc=syntaxcomplete#Complete
 
 " Set tree as default listing style for netrw
-let g:netrw_liststyle= 3
+let g:netrw_liststyle=3
+" Suppress banner
+let g:netrw_banner=0
 
 " cursor shape depending on mode
 " Note: This should be set after `set termguicolors` or `set t_Co=256`.
