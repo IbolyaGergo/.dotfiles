@@ -141,6 +141,10 @@ endif
 
 set path+=**
 
+" Time in milliseconds that is waited for a key code or mapped key sequence
+" to complete
+set ttimeoutlen=10
+
 "===================================================================================
 " Plugins
 "===================================================================================
