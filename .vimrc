@@ -197,9 +197,6 @@ call plug#end()
 set background=light
 syntax enable
 
-" Column indicating column number
-set colorcolumn=80
-
 color solarized8
 
 " Color theme and syntax highlighting
