@@ -175,3 +175,6 @@ export CPPUTEST_HOME="$HOME/tools/cpputest"
 
 # Required for tldr
 export PATH="/home/$USER/.local/bin:$PATH"
+
+# Turn vim into a manpager
+export MANPAGER="vim +MANPAGER --not-a-term -"
