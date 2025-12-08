@@ -192,6 +192,8 @@ syntax enable
 
 color solarized8
 
+" Ignore Unity tests that PASS
+set errorformat^=%-G%f:%l:%m:PASS
 
 
 " UltiSnips
