@@ -183,15 +183,8 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'lervag/vimtex'
 Plug 'lifepillar/vim-solarized8'
-Plug 'morhetz/gruvbox'
 
 call plug#end()
-
-" Color theme and syntax highlighting
-" set background=light
-" syntax enable
-" color gruvbox
-" let g:gruvbox_contrast_light='soft'
 
 " Color theme and syntax highlighting
 set background=light
@@ -199,11 +192,6 @@ syntax enable
 
 color solarized8
 
-" Color theme and syntax highlighting
-" set background=dark
-" syntax enable
-" color gruvbox
-" let g:gruvbox_contrast_dark='soft'
 
 
 " UltiSnips
