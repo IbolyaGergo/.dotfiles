@@ -113,6 +113,8 @@ set omnifunc=syntaxcomplete#Complete
 let g:netrw_liststyle=3
 " Suppress banner
 let g:netrw_banner=0
+" Hiding files
+let g:netrw_list_hide = '.*\.swp$' 
 
 if has('termguicolors')
     set termguicolors
@@ -248,3 +250,7 @@ let g:vimtex_view_method = 'zathura'
 if empty(v:servername) && exists('*remote_startserver')
   call remote_startserver('VIM')
 endif
+
+" Disable search in packages, included files
+" (Takes a long time...)
+let g:vimtex_include_search_enabled=0
