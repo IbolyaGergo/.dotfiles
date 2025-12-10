@@ -1,2 +1,2 @@
-set path+=$HOME/Documents/notes/**
+set path+=$HOME/documents/notes/**
 setlocal suffixesadd+=.md
