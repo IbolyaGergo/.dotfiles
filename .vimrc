@@ -165,6 +165,10 @@ if !exists(":DiffOrig")
 		  \ | wincmd p | diffthis
 endif
 
+" Ignore Unity tests that PASS
+set errorformat^=%-G%f:%l:%m:PASS
+
+
 "===================================================================================
 " Plugins
 "===================================================================================
@@ -191,10 +195,6 @@ set background=light
 syntax enable
 
 color solarized8
-
-" Ignore Unity tests that PASS
-set errorformat^=%-G%f:%l:%m:PASS
-
 
 " UltiSnips
 
