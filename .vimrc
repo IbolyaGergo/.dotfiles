@@ -187,6 +187,7 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'lervag/vimtex'
 Plug 'lifepillar/vim-solarized8'
+Plug 'terrastruct/d2-vim'
 
 call plug#end()
 
