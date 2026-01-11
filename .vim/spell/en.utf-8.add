@@ -2,3 +2,15 @@ LeVeque
 advection
 th
 CFL
+Wendroff
+Courant
+Toro
+extremum
+Laney
+URC
+Kuzmin
+#mplcit
+implcit/!
+Friedrichs
+Lewy
+BTBS
