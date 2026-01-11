@@ -21,20 +21,49 @@ endsnippet
 ##############
 
 snippet eqref "Equation reference" w
-\ref{eq:$1} $0
+\ref{eq:$1}$0
 endsnippet
 
 ##########
 # THESIS #
 ##########
-snippet uin "Cell avg" w
-u_{i$1}^{n$2}
+
+snippet uio "old value" wA
+u_{i}^{n}
 endsnippet
 
-snippet rec "Reconstruction" w
-\tilde{u}^{n}(x,t_{n$1}) $0
+snippet uimo "old value left" wA
+u_{i-1}^{n}
 endsnippet
 
-snippet xlr "x left" w
-x_{i $1 1/2}$0
+snippet uipo "old value right" wA
+u_{i+1}^{n}
+endsnippet
+
+snippet uin "new value" wA
+u_{i}^{n+1}
+endsnippet
+
+snippet uimn "new value left" wA
+u_{i-1}^{n+1}
+endsnippet
+
+snippet uipn "new value right" wA
+u_{i+1}^{n+1}
+endsnippet
+
+snippet xl "x left" wA
+x_{i-1/2}
+endsnippet
+
+snippet xr "x right" wA
+x_{i+1/2}
+endsnippet
+
+snippet tn "t old" wA
+t^{n+1}
+endsnippet
+
+snippet recu "reconstruction" wA
+\tilde{u}(x,t^n)
 endsnippet
