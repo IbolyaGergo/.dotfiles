@@ -244,6 +244,24 @@ let g:vimtex_view_method = 'zathura'
 " see ":help vimtex-compiler".
 " let g:vimtex_compiler_method = 'latexrun'
 
+" Add `-shell-escape` for the standalone package.
+" `\includestandalone requires it, otherwise the execution of shell commands is disabled for security reasons.
+let g:vimtex_compiler_latexmk = {
+    \ 'aux_dir' : '',
+    \ 'out_dir' : '',
+    \ 'callback' : 1,
+    \ 'continuous' : 1,
+    \ 'executable' : 'latexmk',
+    \ 'hooks' : [],
+    \ 'options' : [
+    \   '-shell-escape',
+    \   '-verbose',
+    \   '-file-line-error',
+    \   '-synctex=1',
+    \   '-interaction=nonstopmode',
+    \ ],
+    \}
+
 " Most VimTeX mappings rely on localleader and this can be changed with the
 " following line. The default is usually fine and is the symbol "\".
 " let maplocalleader = ","
