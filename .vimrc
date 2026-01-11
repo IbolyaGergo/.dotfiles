@@ -167,6 +167,9 @@ if !exists(":DiffOrig")
 		  \ | wincmd p | diffthis
 endif
 
+" Ignore LaTeX build files
+set wildignore+=*.aux,*.bbl,*.bcf,*.blg,*.brf,*.fls,*.fdb_latexmk,*.log,*.out,*.pdf,*.run.xml,*.synctex.gz,*.toc,*.xdv
+
 "===================================================================================
 " Plugins
 "===================================================================================
