@@ -1,9 +1,19 @@
+extends texmath
 ########
 # MATH #
 ########
 
-snippet dfrac "Fraction" w
-\dfrac{$1}{$2}$0
+snippet ff "Fraction" wA
+\frac{${1:${VISUAL}}}{$2}$0
+endsnippet
+
+snippet mm "Inline Math" wA
+\\(${1:${VISUAL}}\\)$0
+endsnippet
+
+# differentials (ejmastnak)
+snippet "([^a-zA-Z0-9])df" "\diff" rA
+`!p snip.rv = match.group(1)`\diff 
 endsnippet
 
 ##############
