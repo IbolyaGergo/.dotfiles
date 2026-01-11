@@ -1,6 +1,12 @@
-" set foldmethod=expr
-" set foldexpr=vimtex#fold#level(v:lnum)
-" set foldtext=vimtex#fold#text()
-" set fillchars=fold:\ 
-" Hiding files
-let g:netrw_list_hide = '.*\.swp$,.*\.aux$,.*\.bbl$,.*\.bbl-SAVE-ERROR$,.*\.bcf$,.*\.blg$,.*\.fdb_latexmk$,.*\.fls$,.*\.log$,.*\.out$,.*\.run.xml$,.*\.synctex.gz$' 
+set foldmethod=expr
+set foldexpr=vimtex#fold#level(v:lnum)
+set foldtext=vimtex#fold#text()
+set fillchars=fold:\ 
+
+" To speed up folding
+" use vimtex zx to add folds in demand
+let g:vimtex_fold_manual = 1
+
+set textwidth=9999
+
+set spell

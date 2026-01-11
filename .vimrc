@@ -114,7 +114,7 @@ let g:netrw_liststyle=3
 " Suppress banner
 let g:netrw_banner=0
 " Hiding files
-let g:netrw_list_hide = '.*\.swp$' 
+let g:netrw_list_hide = '.*\.swp$,.*\.aux$,.*\.bbl$,.*\.bbl-SAVE-ERROR$,.*\.bcf$,.*\.blg$,.*\.fdb_latexmk$,.*\.fls$,.*\.log$,.*\.out$,.*\.run.xml$,.*\.synctex.gz$' 
 
 if has('termguicolors')
     set termguicolors
