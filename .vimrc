@@ -170,6 +170,9 @@ endif
 " Ignore LaTeX build files
 set wildignore+=*.aux,*.bbl,*.bcf,*.blg,*.brf,*.fls,*.fdb_latexmk,*.log,*.out,*.pdf,*.run.xml,*.synctex.gz,*.toc,*.xdv
 
+" Ignore Unity tests that PASS
+set errorformat^=%-G%f:%l:%m:PASS
+
 "===================================================================================
 " Plugins
 "===================================================================================
@@ -188,28 +191,15 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'lervag/vimtex'
 Plug 'lifepillar/vim-solarized8'
-Plug 'morhetz/gruvbox'
+Plug 'terrastruct/d2-vim'
 
 call plug#end()
-
-" Color theme and syntax highlighting
-" set background=light
-" syntax enable
-" color gruvbox
-" let g:gruvbox_contrast_light='soft'
 
 " Color theme and syntax highlighting
 set background=light
 syntax enable
 
 color solarized8
-
-" Color theme and syntax highlighting
-" set background=dark
-" syntax enable
-" color gruvbox
-" let g:gruvbox_contrast_dark='soft'
-
 
 " UltiSnips
 
