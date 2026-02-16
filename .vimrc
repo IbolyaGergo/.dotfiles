@@ -173,6 +173,9 @@ set wildignore+=*.aux,*.bbl,*.bcf,*.blg,*.brf,*.fls,*.fdb_latexmk,*.log,*.out,*.
 " Ignore Unity tests that PASS
 set errorformat^=%-G%f:%l:%m:PASS
 
+" make test
+nnoremap <leader>t :make test<CR>
+
 "===================================================================================
 " Plugins
 "===================================================================================
