@@ -60,10 +60,18 @@ snippet xr "x right" wA
 x_{i+1/2}
 endsnippet
 
-snippet tn "t old" wA
-t^{n+1}
+snippet tn "time level" wA
+t^{${1:n+1}}$0
 endsnippet
 
 snippet recu "reconstruction" wA
 \tilde{u}(x,t^n)
+endsnippet
+
+snippet flr "flux right" wA
+F_{i+1/2}
+endsnippet
+
+snippet fll "flux left" wA
+F_{i-1/2}
 endsnippet
