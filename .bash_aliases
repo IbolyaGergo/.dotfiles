@@ -4,3 +4,5 @@ alias diff='diff --color=always'
 
 # Render colors
 alias less='less -R'
+
+alias zathura='zathura --fork'
