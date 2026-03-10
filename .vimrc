@@ -180,6 +180,9 @@ nnoremap <leader>t :make test<CR>
 " use wrap settings
 set diffopt+=anchor,vertical
 
+" Add CFilter package to filter Quickfix list
+packadd cfilter
+
 "===================================================================================
 " Plugins
 "===================================================================================
