@@ -178,3 +178,7 @@ export PATH="/home/$USER/.local/bin:$PATH"
 
 # Turn vim into a manpager
 export MANPAGER="vim +MANPAGER --not-a-term -"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
