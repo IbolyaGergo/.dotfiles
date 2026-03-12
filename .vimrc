@@ -176,6 +176,13 @@ set errorformat^=%-G%f:%l:%m:PASS
 " make test
 nnoremap <leader>t :make test<CR>
 
+" Start diff in vertical mode, use anchors if set
+" use wrap settings
+set diffopt+=anchor,vertical
+
+" Add CFilter package to filter Quickfix list
+packadd cfilter
+
 "===================================================================================
 " Plugins
 "===================================================================================
