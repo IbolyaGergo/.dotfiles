@@ -1,5 +1,2 @@
-setlocal errorformat =
-            \\ \ -->\ %f:%l:%c,
-            \%f:%l:\ %t%.%#:\ %m
-set path=src/**
+set path=src/**,test/**,scripts/**
 set foldmethod=marker
