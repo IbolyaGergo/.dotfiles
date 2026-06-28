@@ -205,11 +205,15 @@ Plug 'terrastruct/d2-vim'
 
 call plug#end()
 
-" Color theme and syntax highlighting
-set background=light
-syntax enable
-
 color solarized8
+let g:solarized_extra_hi_groups = 1
+
+" Color theme and syntax highlighting
+if filereadable(expand('~/.vim/theme.vim'))
+    source ~/.vim/theme.vim
+endif
+
+syntax enable
 
 " UltiSnips
 
