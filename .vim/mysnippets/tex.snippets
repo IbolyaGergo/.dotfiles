@@ -28,6 +28,14 @@ endsnippet
 # THESIS #
 ##########
 
+snippet ui+ "pos predictor" wA
+u_{i}^{+}
+endsnippet
+
+snippet ui- "neg predictor" wA
+u_{i}^{-}
+endsnippet
+
 snippet uio "old value" wA
 u_{i}^{n}
 endsnippet
@@ -41,7 +49,7 @@ u_{i+1}^{n}
 endsnippet
 
 snippet uin "new value" wA
-u_{i}^{n+1}
+u_{i}^{n+1,k+1}
 endsnippet
 
 snippet uimn "new value left" wA
@@ -50,6 +58,18 @@ endsnippet
 
 snippet uipn "new value right" wA
 u_{i+1}^{n+1}
+endsnippet
+
+snippet u2 "new value right" wA
+\frac{\left( ${1:u_{i}^{n}} \right)^2}{2}
+endsnippet
+
+snippet umin "u min" wA
+u_{${1:i}, \min}$0
+endsnippet
+
+snippet umax "u max" wA
+u_{${1:i}, \max}$0
 endsnippet
 
 snippet xl "x left" wA
@@ -69,9 +89,33 @@ snippet recu "reconstruction" wA
 endsnippet
 
 snippet flr "flux right" wA
-F_{i+1/2}
+F_{i+1/2}^{+}$0
+endsnippet
+
+snippet delflr "antidiff flux right" wA
+\delta F_{i+1/2}^{+}$0
 endsnippet
 
 snippet fll "flux left" wA
-F_{i-1/2}
+F_{i-1/2}^{+}$0
+endsnippet
+
+snippet delfll "antidiff flux left" wA
+\delta F_{i-1/2}^{+}$0
+endsnippet
+
+snippet dtdx "dt/dx" wA
+\frac{\Delta t}{\Delta x}
+endsnippet
+
+snippet dxdt "dx/dt" wA
+\frac{\Delta x}{\Delta t}
+endsnippet
+
+snippet lam "lambda" wA
+\lambda
+endsnippet
+
+snippet iloc "I_local" wA
+\mathcal{I}_{\text{local}}^k
 endsnippet
