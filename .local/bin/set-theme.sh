@@ -9,14 +9,15 @@ if [[ "$THEME" != "light" && "$THEME" != "dark" ]]; then
     exit 1
 fi
 
+BIN_DIR="$HOME/.local/bin"
 # 2. Define the scripts to run
 SCRIPTS=(
-    "vim-set-theme.sh"
-    "zathura-set-theme.sh"
+    "$BIN_DIR/vim-set-theme.sh"
+    "$BIN_DIR/zathura-set-theme.sh"
 )
 
 for script in "${SCRIPTS[@]}"; do
-    if command -v "$script" >/dev/null 2>&1; then
+    if [[ -x "$script" ]]; then
         echo "Running $script..."
         "$script" "$THEME"
     else
