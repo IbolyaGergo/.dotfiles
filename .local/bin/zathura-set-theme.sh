@@ -25,4 +25,3 @@ case $THEME in
 esac
 
 ln -sf "$ZATHURA_DIR/$TARGET" "$THEME_PATH"
-echo "Zathura theme set to $TARGET from dotfiles."
