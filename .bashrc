@@ -179,6 +179,13 @@ export PATH="/home/$USER/.local/bin:$PATH"
 # Turn vim into a manpager
 export MANPAGER="vim +MANPAGER --not-a-term -"
 
+# -j$(nproc):
+# run as many simultaneous jobs as CPU cores available
+# --output-sync=target:
+# If multiple files have warnings or errors, the output for each file is kept
+# together and not mixed with others
+export MAKEFLAGS="-j$(nproc) --output-sync=target"
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
