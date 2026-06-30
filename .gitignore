@@ -3,4 +3,5 @@
 .vim/.netrwhist
 *.swp
 *.swo
+*.spl
 .ipython/profile_default/history.sqlite
