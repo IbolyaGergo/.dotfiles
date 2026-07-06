@@ -6,3 +6,6 @@ alias diff='diff --color=always'
 alias less='less -R'
 
 alias zathura='zathura --fork'
+
+# Edit python files excluding dotfiles and ./envs/
+alias ped='vim $(find . -name "[^_]*.py" -not -path "./envs/*" -not -path "*/.*")'
