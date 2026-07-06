@@ -6,3 +6,4 @@
 *.spl
 .ipython/profile_default/history.sqlite
 .config/QtProject.conf
+.config/fish/config.fish
