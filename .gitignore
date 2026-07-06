@@ -5,3 +5,4 @@
 *.swo
 *.spl
 .ipython/profile_default/history.sqlite
+.config/QtProject.conf
