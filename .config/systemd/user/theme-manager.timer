@@ -1,0 +1,12 @@
+[Unit]
+Description=Run theme switcher at boot and hourly
+
+[Timer]
+# Run 1 minute after boot to handle the "computer was off" scenario
+OnBootSec=1min
+# Run at the top of every hour to handle time transitions
+OnCalendar=hourly
+Persistent=true
+
+[Install]
+WantedBy=timers.target

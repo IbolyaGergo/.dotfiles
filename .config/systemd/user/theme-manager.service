@@ -1,0 +1,6 @@
+[Unit]
+Description=Switch theme based on time of day
+
+[Service]
+Type=oneshot
+ExecStart=%h/.local/bin/switch-theme.sh
