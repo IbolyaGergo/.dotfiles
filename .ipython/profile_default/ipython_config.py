@@ -868,7 +868,19 @@ c.TerminalInteractiveShell.extra_open_editor_shortcuts = True
 #         },
 #      ]
 #  Default: []
-# c.TerminalInteractiveShell.shortcuts = []
+c.TerminalInteractiveShell.shortcuts = [
+        {
+            "new_keys": ["c-right"],
+            "new_filter": "has_suggestion & default_buffer_focused",
+            "command": "IPython:auto_suggest.accept_token",
+            "create": True,
+        },
+        {
+            "new_keys": ["right"],
+            "new_filter": "is_cursor_at_the_end_of_line & default_buffer_focused & pass_through",
+            "command": "IPython:auto_suggest.resume_hinting",
+            "create": True,
+        }]
 
 ## Show rewritten input, e.g. for autocall.
 #  See also: InteractiveShell.show_rewritten_input
