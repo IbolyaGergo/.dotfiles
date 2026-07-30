@@ -205,8 +205,9 @@ Plug 'terrastruct/d2-vim'
 
 call plug#end()
 
-color solarized8
-let g:solarized_extra_hi_groups = 1
+color selenized
+" color solarized8
+" let g:solarized_extra_hi_groups = 1
 
 " Color theme and syntax highlighting
 if filereadable(expand('~/.vim/theme.vim'))
