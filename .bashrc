@@ -131,18 +131,28 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-# Automatically activate conda env when cd in a dir.
-export CONDACONFIGDIR=""
-cd() { builtin cd "$@" &&
-if [ -f $PWD/environment.yaml ]; then
-    export CONDACONFIGDIR=$PWD
-    conda activate $(grep name: $PWD/environment.yaml | head -n 1 | cut -d: -f2)
-elif [ "$CONDACONFIGDIR" ]; then
-    if [[ $PWD != *"$CONDACONFIGDIR"* ]]; then
-        export CONDACONFIGDIR=""
-        conda deactivate
+# Auto-activate ./envs in Bash (Works for cd and new tmux panes)
+auto_conda_envs() {
+    # Check if ./envs directory exists in current working directory
+    if [ -d "./envs" ]; then
+        # Activate only if it's not already the active environment
+        if [ "$CONDA_DEFAULT_ENV" != "$PWD/envs" ]; then
+            echo "Activating local environment (./envs)..."
+            conda activate ./envs
+        fi
+    # If no ./envs exists, check if we need to deactivate a previously loaded local env
+    elif [ -n "$CONDA_DEFAULT_ENV" ]; then
+        if [[ "$CONDA_DEFAULT_ENV" == */envs ]]; then
+            echo "Deactivating local environment..."
+            conda deactivate
+        fi
     fi
-fi }
+}
+
+# Append auto_conda_envs to PROMPT_COMMAND so it runs before every prompt
+if [[ ! "$PROMPT_COMMAND" =~ "auto_conda_envs" ]]; then
+    PROMPT_COMMAND="auto_conda_envs;${PROMPT_COMMAND}"
+fi
 
 # set up EDITOR
 export EDITOR="vim"
