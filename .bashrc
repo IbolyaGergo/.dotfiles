@@ -166,13 +166,6 @@ export PATH="/usr/local/texlive/2025/bin/x86_64-linux:$PATH"
 export MANPATH="/usr/local/texlive/2025/texmf-dist/doc/man:$MANPATH"
 export INFOPATH="/usr/local/texlive/2025/texmf-dist/doc/info:$INFOPATH"
 
-# Automatically launch a tmux session
-# "command -v tmux &> /dev/null" checks if tmux is installed
-# "[ -z "$TMUX" ]" returns true if len($TMUX) == 0
-if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-  tmux attach-session -t default || tmux new-session -s default
-fi
-
 # Prompt shows current branch and status of cwd(from Pro Git)
 if [ -f ~/.git-prompt.sh ]; then
     . ~/.git-prompt.sh
