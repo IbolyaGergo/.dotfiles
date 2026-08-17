@@ -202,6 +202,11 @@ Plug 'honza/vim-snippets'
 Plug 'lervag/vimtex'
 Plug 'lifepillar/vim-solarized8'
 Plug 'terrastruct/d2-vim'
+Plug 'lambdalisue/vim-fern'
+Plug 'lambdalisue/vim-nerdfont'
+Plug 'lambdalisue/vim-fern-renderer-nerdfont'
+Plug 'lambdalisue/vim-glyph-palette'
+Plug 'lambdalisue/vim-fern-hijack'
 
 call plug#end()
 
@@ -283,3 +288,10 @@ endif
 " Disable search in packages, included files
 " (Takes a long time...)
 let g:vimtex_include_search_enabled=0
+
+" Fern
+let g:fern#renderer = "nerdfont"
+augroup my-glyph-palette
+    autocmd! *
+    autocmd FileType fern call glyph_palette#apply()
+augroup END
