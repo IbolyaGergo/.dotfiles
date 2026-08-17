@@ -4,3 +4,5 @@ include theme
 
 map <C-y> scroll up
 map <C-e> scroll down
+map [fullscreen] <C-y> scroll up
+map [fullscreen] <C-e> scroll down
