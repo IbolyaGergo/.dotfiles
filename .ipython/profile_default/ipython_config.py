@@ -86,7 +86,7 @@ c = get_config()  #noqa
 #          The exact options available depend on what Matplotlib provides at runtime.
 #  Choices: any of ['agg', 'auto', 'cairo', 'gtk3', 'gtk3agg', 'gtk3cairo', 'gtk4', 'gtk4agg', 'gtk4cairo', 'inline', 'macosx', 'nbagg', 'notebook', 'osx', 'pdf', 'pgf', 'ps', 'qt', 'qt5', 'qt5agg', 'qt5cairo', 'qt6', 'qtagg', 'qtcairo', 'svg', 'template', 'tk', 'tkagg', 'tkcairo', 'webagg', 'wx', 'wx', 'wxagg', 'wxcairo'] (case-insensitive) or None
 #  Default: None
-# c.InteractiveShellApp.pylab = None
+c.InteractiveShellApp.pylab = 'auto'
 
 ## If true, IPython will populate the user namespace with numpy, pylab, etc.
 #          and an ``import *`` is done from numpy and pylab, when using pylab mode.
