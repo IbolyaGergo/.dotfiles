@@ -216,6 +216,9 @@ endif
 
 syntax enable
 
+" Automatically copy to the system clipboard
+set clipboard=unnamedplus
+
 " UltiSnips
 
 let g:UltiSnipsExpandTrigger       = '<Tab>'    " use Tab to expand snippets
