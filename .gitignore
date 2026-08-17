@@ -5,5 +5,6 @@
 *.swo
 *.spl
 .ipython/profile_default/history.sqlite
+.ipython/profile_default/db/
 .config/QtProject.conf
 .config/fish/config.fish
