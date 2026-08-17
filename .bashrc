@@ -149,10 +149,14 @@ auto_conda_envs() {
     fi
 }
 
+PROMPT_COMMAND=""
 # Append auto_conda_envs to PROMPT_COMMAND so it runs before every prompt
 if [[ ! "$PROMPT_COMMAND" =~ "auto_conda_envs" ]]; then
     PROMPT_COMMAND="auto_conda_envs;${PROMPT_COMMAND}"
 fi
+
+# Open a new shell in the cwd
+PROMPT_COMMAND=${PROMPT_COMMAND:+"$PROMPT_COMMAND "}'printf "\e]9;9;%s\e\\" "$(wslpath -w "$PWD")"'
 
 # set up EDITOR
 export EDITOR="vim"
