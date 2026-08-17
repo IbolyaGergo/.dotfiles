@@ -188,7 +188,7 @@ export MANPAGER="vim +MANPAGER --not-a-term -"
 # --output-sync=target:
 # If multiple files have warnings or errors, the output for each file is kept
 # together and not mixed with others
-export MAKEFLAGS="-j$(nproc) --output-sync=target"
+export MAKEFLAGS="-j$(nproc) --output-sync=none"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
