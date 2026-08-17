@@ -1,3 +1,6 @@
 set font "monospace normal 14"
 
 include theme
+
+map <C-y> scroll up
+map <C-e> scroll down
