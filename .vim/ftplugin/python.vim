@@ -1,4 +1,4 @@
-set path=src/**,test/**,scripts/**
+set path=src/**,test/**,scripts/**,tmp/**
 set foldmethod=marker
 
 " Format the whole file while preserving cursor position
