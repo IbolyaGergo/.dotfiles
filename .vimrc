@@ -183,6 +183,8 @@ set diffopt+=anchor,vertical
 " Add CFilter package to filter Quickfix list
 packadd cfilter
 
+" This helps when, e.g., opening man pages.
+set foldmethod=indent
 "===================================================================================
 " Plugins
 "===================================================================================
