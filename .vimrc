@@ -185,6 +185,38 @@ packadd cfilter
 
 " This helps when, e.g., opening man pages.
 set foldmethod=indent
+
+function! FormatPythonRuff()
+  let l:file = expand('%')
+  let l:output = systemlist('ruff format ' . shellescape(l:file) . ' 2>&1')
+
+  if v:shell_error == 0
+    " Save window view, cursor position, and folds
+    let l:save_view = winsaveview()
+    mkview
+
+    silent edit!
+
+    " Restore folds and window view
+    silent! loadview
+    call winrestview(l:save_view)
+    cclose
+  else
+    let l:old_efm = &errorformat
+    let &errorformat = 'error: Failed to parse %f:%l:%c: %m,%f:%l:%c: %m,%-G%.%#'
+
+    cexpr l:output
+
+    let &errorformat = l:old_efm
+    botright copen 5
+  endif
+endfunction
+
+augroup ruff_format_on_save
+  autocmd!
+  autocmd BufWritePost *.py call FormatPythonRuff()
+augroup END
+
 "===================================================================================
 " Plugins
 "===================================================================================
