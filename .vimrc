@@ -178,7 +178,8 @@ nnoremap <leader>t :make test<CR>
 
 " Start diff in vertical mode, use anchors if set
 " use wrap settings
-set diffopt+=anchor,vertical
+" set diffopt+=anchor,vertical
+set diffopt+=vertical
 
 " Add CFilter package to filter Quickfix list
 packadd cfilter
