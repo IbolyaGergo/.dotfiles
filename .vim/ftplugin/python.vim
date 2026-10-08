@@ -1,5 +1,5 @@
-set path=src/**,test/**,scripts/**,tmp/**
-set foldmethod=marker
+setlocal path=src/**,test/**,scripts/**,tmp/**
+setlocal foldmethod=marker
 
 " Format the whole file while preserving cursor position
 nnoremap <Leader>f :let save_view = winsaveview()<CR>:%!ruff format --stdin-filename % -q -<CR>:call winrestview(save_view)<CR>
