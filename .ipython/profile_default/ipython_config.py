@@ -872,7 +872,7 @@ c.TerminalInteractiveShell.shortcuts = [
         {
             "new_keys": ["c-right"],
             "new_filter": "has_suggestion & default_buffer_focused",
-            "command": "IPython:auto_suggest.accept_token",
+            "command": "IPython:auto_suggest.accept_word",
             "create": True,
         },
         {
