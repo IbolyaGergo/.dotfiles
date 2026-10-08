@@ -147,7 +147,7 @@ set path+=**
 " to complete
 set ttimeoutlen=10
 
-set textwidth=80
+set textwidth=100
 
 " Show a few lines of context around the cursor.  Note that this makes the
 " text scroll if you mouse-click near the start or end of the window.
