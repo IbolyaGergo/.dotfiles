@@ -195,3 +195,21 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export PATH="$HOME/.local/bin:$PATH"
+
+export ZOTERO_WIN_PATH="/mnt/c/Users/gergoi/Zotero/"
+export ZOTERO_STORAGE="$ZOTERO_WIN_PATH/storage/"
+
+# Fuzzy-find Zotero PDFs and launch in Zathura
+zopen() {
+    local SELECTED
+    SELECTED=$(find "$ZOTERO_STORAGE" -type f -iname "*.pdf" \
+        | fzf --delimiter='/' --with-nth=-1 --prompt="Select PDF > " --query="$1")
+
+    if [ -n "$SELECTED" ]; then
+        history -s "zathura \"$SELECTED\""
+        echo "Opening: $SELECTED"
+        zathura "$SELECTED" &>/dev/null &
+    fi
+}
+
+source /usr/share/doc/fzf/examples/key-bindings.bash
