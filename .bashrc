@@ -212,4 +212,6 @@ zopen() {
     fi
 }
 
+export BROWSER="$HOME/.local/bin/wsl-browser"
+
 source /usr/share/doc/fzf/examples/key-bindings.bash
