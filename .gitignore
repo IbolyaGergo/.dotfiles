@@ -1,5 +1,6 @@
 .vim/autoload/
 .vim/plugged/
+.vim/view/
 .vim/.netrwhist
 *.swp
 *.swo
