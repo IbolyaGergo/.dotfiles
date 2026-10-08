@@ -6,3 +6,8 @@ map <C-y> scroll up
 map <C-e> scroll down
 map [fullscreen] <C-y> scroll up
 map [fullscreen] <C-e> scroll down
+
+set selection-clipboard clipboard
+
+# set recolor true
+# set recolor-keephue true
