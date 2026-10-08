@@ -170,7 +170,7 @@ export INFOPATH="/usr/local/texlive/2025/texmf-dist/doc/info:$INFOPATH"
 if [ -f ~/.git-prompt.sh ]; then
     . ~/.git-prompt.sh
     export GIT_PS1_SHOWDIRTYSTATE=1
-    export PS1='\w$(__git_ps1 " (%s)")\$ '
+    export PS1='\[\033[01;34m\]\w\[\033[00m\]$(__git_ps1 " ( %s)")\n\$ '
 fi
 
 # Setup XILINX_VITIS and XILINX_VIVADO variables
