@@ -1,0 +1,43 @@
+# zathurarc-selenized-light
+set notification-error-bg       "#ece3cc" # base2  # seem not work
+set notification-error-fg       "#d2212d" # red
+set notification-warning-bg     "#ece3cc" # base2
+set notification-warning-fg     "#d2212d" # red
+set notification-bg             "#ece3cc" # base2
+set notification-fg             "#0072d4" # blue
+
+set completion-bg               "#fdf3db" # base3
+set completion-fg               "#53676d" # base00
+set completion-group-bg         "#ece3cc" # base2
+set completion-group-fg         "#3a4d53" # base01
+set completion-highlight-bg     "#909995" # base1
+set completion-highlight-fg     "#3a4d53" # base02
+
+# Define the color in index mode
+set index-bg                   "#fdf3db" # base3
+set index-fg                   "#53676d" # base00
+set index-active-bg             "#ece3cc" # base2
+set index-active-fg             "#3a4d53" # base01
+
+set inputbar-bg                 "#909995" # base1
+set inputbar-fg                 "#3a4d53" # base02
+
+set statusbar-bg                "#fdf3db" # base3
+set statusbar-fg                "#53676d" # base00
+
+set highlight-color             "#a78300" # base0  # hightlight match when search keyword(vim's /)
+set highlight-active-color      "#c25d1e" # orange
+
+set default-bg                  "#fdf3db" # base3
+set default-fg                  "#53676d" # base00
+set render-loading              true
+# set render-loading-fg           "#fdf3db" # base3
+# set render-loading-bg           "#fdf3db" # base3
+
+# Recolor book content's color
+# verbose
+# verbose
+set recolor-lightcolor          "#fdf3db" # base3
+set recolor-darkcolor           "#53676d" # base00
+set recolor                     "true"
+# set recolor-keephue             true      # keep original color

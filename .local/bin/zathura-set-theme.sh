@@ -14,7 +14,7 @@ THEME=$1
 
 case $THEME in
     light)
-        TARGET="solarized_light"
+        TARGET="selenized_light"
         ;;
     dark)
         TARGET="solarized_dark"
