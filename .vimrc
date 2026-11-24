@@ -114,7 +114,7 @@ let g:netrw_liststyle=3
 " Suppress banner
 let g:netrw_banner=0
 " Hiding files
-let g:netrw_list_hide = '.*\.swp$,.*\.aux$,.*\.bbl$,.*\.bbl-SAVE-ERROR$,.*\.bcf$,.*\.blg$,.*\.fdb_latexmk$,.*\.fls$,.*\.log$,.*\.out$,.*\.run.xml$,.*\.synctex.gz$' 
+let g:netrw_list_hide = '.*\.swp$,.*\.aux$,.*\.bbl$,.*\.bbl-SAVE-ERROR$,.*\.bcf$,.*\.blg$,.*\.fdb_latexmk$,.*\.fls$,.*\.log$,.*\.out$,.*\.run.xml$,.*\.synctex.gz$'
 
 if has('termguicolors')
     set termguicolors
@@ -187,35 +187,64 @@ packadd cfilter
 " This helps when, e.g., opening man pages.
 set foldmethod=indent
 
-function! FormatPythonRuff()
-  let l:file = expand('%')
-  let l:output = systemlist('ruff format ' . shellescape(l:file) . ' 2>&1')
+" Path to ruff. Override in your vimrc if it lives somewhere non-standard:
+"   let g:ruff_executable = expand('~/.local/bin/ruff')
+let g:ruff_executable = get(g:, 'ruff_executable', 'ruff')
 
-  if v:shell_error == 0
-    " Save window view, cursor position, and folds
-    let l:save_view = winsaveview()
-    mkview
-
-    silent edit!
-
-    " Restore folds and window view
-    silent! loadview
-    call winrestview(l:save_view)
-    cclose
-  else
-    let l:old_efm = &errorformat
-    let &errorformat = 'error: Failed to parse %f:%l:%c: %m,%f:%l:%c: %m,%-G%.%#'
-
-    cexpr l:output
-
-    let &errorformat = l:old_efm
-    botright copen 5
+function! RuffFormatBuffer() abort
+  if !&modifiable || &readonly || &binary
+    return
   endif
+
+  " Re-resolved on every write so a conda env (or a project-local bin) wins.
+  if !executable(g:ruff_executable)
+    return
+  endif
+
+  let l:path = expand('<afile>:p')
+  let l:before = getline(1, '$')
+  let l:errfile = tempname()
+
+  let l:out = system(
+        \ printf('%s format --stdin-filename %s - 2>%s',
+        \        shellescape(g:ruff_executable),
+        \        shellescape(l:path),
+        \        shellescape(l:errfile)),
+        \ join(l:before, "\n") . "\n")
+  let l:status = v:shell_error
+
+  let l:err = filereadable(l:errfile) ? join(readfile(l:errfile, '', 3), ' ') : ''
+  call delete(l:errfile)
+
+  if l:status != 0
+    echohl WarningMsg
+    echomsg 'ruff format: ' . (empty(l:err) ? 'failed with exit ' . l:status : l:err)
+    echohl None
+    return
+  endif
+
+  " system() strips the final newline; split(..., 1) keeps interior blanks.
+  let l:new = split(l:out, "\n", 1)
+  if !empty(l:new) && l:new[-1] ==# ''
+    call remove(l:new, -1)
+  endif
+
+  if l:new ==# l:before
+    return
+  endif
+
+  let l:view = winsaveview()
+  silent keepjumps %delete _
+  if &undolevels != -1
+    undojoin
+  endif
+  call setline(1, l:new)
+  call winrestview(l:view)   " clamps lnum if the file got shorter
 endfunction
 
 augroup ruff_format_on_save
   autocmd!
-  autocmd BufWritePost *.py call FormatPythonRuff()
+  autocmd BufWritePre *.py call RuffFormatBuffer()
 augroup END
 
 "===================================================================================
